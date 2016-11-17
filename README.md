@@ -3,7 +3,7 @@
 ## Usage
 
 ``` javascript
-var stuff = require("node!./file.node");
+var stuff = require("node-loader!./file.node");
 // => exectues the node native module in enhanced-require
 ```
 
