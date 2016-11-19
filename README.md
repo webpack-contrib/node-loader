@@ -4,7 +4,7 @@
 
 ``` javascript
 var stuff = require("node-loader!./file.node");
-// => exectues the node native module in enhanced-require
+// => executes the node native module in enhanced-require
 ```
 
 ## License
