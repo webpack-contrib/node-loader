@@ -62,6 +62,7 @@ import node from 'file.node';
 
 ### Inline
 
+**In your application**
 ```js
 import node from 'node-loader!./file.node';
 ```
