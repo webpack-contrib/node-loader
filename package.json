@@ -3,10 +3,5 @@
   "version": "0.6.0",
   "author": "Tobias Koppers @sokra",
   "description": "node loader module for enhanced-require",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/mit-license.php"
-    }
-  ]
+  "license": "MIT"
 }
