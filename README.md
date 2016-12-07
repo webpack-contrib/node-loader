@@ -26,9 +26,9 @@ npm install --save-dev node-loader
 
 Executes [node add-ons](https://nodejs.org/dist/latest/docs/api/addons.html) in [enhanced-require](https://github.com/webpack/enhanced-require).
 
-There are three ways to use node-loader in your application.
+Use the loader either via your webpack config, CLI or inline.
 
-### Configuration (recommended)
+### Via webpack config (recommended)
 
 **webpack.config.js**
 ```js
@@ -37,13 +37,14 @@ module.exports = {
     rules: [
       {
         test: /\.node$/,
-        use: [ 'node-loader' ]
+        use: 'node-loader'
       }
     ]
   }
 }
 ```
 
+**In your application**
 ```js
 import node from 'file.node';
 ```
@@ -54,11 +55,12 @@ import node from 'file.node';
 webpack --module-bind 'node=node-loader'
 ```
 
+**In your application**
 ```js
 import node from 'file.node';
 ```
 
-### Require
+### Inline
 
 ```js
 import node from 'node-loader!./file.node';
