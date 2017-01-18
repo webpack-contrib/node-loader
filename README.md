@@ -73,12 +73,13 @@ import node from 'node-loader!./file.node';
   <tbody>
     <tr>
       <td align="center">
-        <img width="150 height="150" src="https://github.com/sokra.png?s=150">
+        
+        <a href="https://github.com/sokra"><img src="https://github.com/sokra.png?s=150" width="150" height="150"></a>
         <br>
         <a href="https://github.com/sokra">Tobias Koppers</a>
       </td>
-    <tr>
-  <tbody>
+    </tr>
+  </tbody>
 </table>
 
 
