@@ -11,7 +11,7 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Node Loader</h1>
-  <h3>Node Add-ons for webpack</h3>
+  <p>Node Add-ons for webpack</p>
 </div>
 
 <h2 align="center">Install</h2>
