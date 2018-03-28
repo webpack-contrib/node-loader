@@ -1,35 +1,41 @@
+<div align="center">
+  <a href="https://github.com/webpack/webpack">
+    <img width="200" height="200" src="https://webpack.js.org/assets/icon-square-big.svg">
+  </a>
+</div>
+
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
 [![deps][deps]][deps-url]
+[![tests][tests]][tests-url]
 [![chat][chat]][chat-url]
 
-<div align="center">
-  <img width="200" height="200"
-    src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg">
-  <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" hspace="20"
-      src="https://webpack.js.org/assets/icon-square-big.svg">
-  </a>
-  <h1>Node Loader</h1>
-  <p>Node Add-ons for webpack</p>
-</div>
+# node-loader
 
-<h2 align="center">Install</h2>
+A [Node.js add-ons](https://nodejs.org/dist/latest/docs/api/addons.html) loader
+module for enhanced-require. Executes add-ons in
+[enhanced-require](https://github.com/webpack/enhanced-require).
 
-```bash
-npm install --save-dev node-loader
+## Requirements
+
+This module requires a minimum of Node v6.9.0 and Webpack v4.0.0.
+
+## Getting Started
+
+To begin, you'll need to install `node-loader`:
+
+```console
+$ npm install node-loader --save-dev
 ```
 
-<h2 align="center">Usage</h2>
+Then add the loader to your `webpack` config. For example:
 
-Executes [node add-ons](https://nodejs.org/dist/latest/docs/api/addons.html) in [enhanced-require](https://github.com/webpack/enhanced-require).
-
-Use the loader either via your webpack config, CLI or inline.
-
-### Via webpack config (recommended)
-
-**webpack.config.js**
 ```js
+import node from 'file.node';
+```
+
+```js
+// webpack.config.js
 module.exports = {
   module: {
     rules: [
@@ -42,20 +48,10 @@ module.exports = {
 }
 ```
 
-**In your application**
-```js
-import node from 'file.node';
-```
+Or on the command-line:
 
-### CLI
-
-```bash
-webpack --module-bind 'node=node-loader'
-```
-
-**In your application**
-```js
-import node from 'file.node';
+```console
+$ webpack --module-bind 'node=node-loader'
 ```
 
 ### Inline
@@ -65,39 +61,11 @@ import node from 'file.node';
 import node from 'node-loader!./file.node';
 ```
 
-<h2 align="center">Maintainer</h2>
+And run `webpack` via your preferred method.
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/166921?v=3&s=150">
-        </br>
-        <a href="https://github.com/bebraw">Juho Vepsäläinen</a>
-      </td>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars2.githubusercontent.com/u/8420490?v=3&s=150">
-        </br>
-        <a href="https://github.com/d3viant0ne">Joshua Wiens</a>
-      </td>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/533616?v=3&s=150">
-        </br>
-        <a href="https://github.com/SpaceK33z">Kees Kluskens</a>
-      </td>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/3408176?v=3&s=150">
-        </br>
-        <a href="https://github.com/TheLarkInn">Sean Larkin</a>
-      </td>
-    </tr>
-  <tbody>
-</table>
+## License
 
+#### [MIT](./LICENSE)
 
 [npm]: https://img.shields.io/npm/v/node-loader.svg
 [npm-url]: https://npmjs.com/package/node-loader
@@ -105,8 +73,14 @@ import node from 'node-loader!./file.node';
 [node]: https://img.shields.io/node/v/node-loader.svg
 [node-url]: https://nodejs.org
 
-[deps]: https://david-dm.org/webpack/node-loader.svg
-[deps-url]: https://david-dm.org/webpack/node-loader
+[deps]: https://david-dm.org/webpack-contrib/node-loader.svg
+[deps-url]: https://david-dm.org/webpack-contrib/node-loader
 
-[chat]: https://badges.gitter.im/webpack/webpack.svg
+[tests]: https://circleci.com/gh/webpack-contrib/node-loader.svg?style=svg
+[tests-url]: https://circleci.com/gh/webpack-contrib/node-loader
+
+[cover]: https://codecov.io/gh/webpack-contrib/node-loader/branch/master/graph/badge.svg
+[cover-url]: https://codecov.io/gh/webpack-contrib/node-loader
+
+[chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg
 [chat-url]: https://gitter.im/webpack/webpack
