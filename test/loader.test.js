@@ -1,7 +1,7 @@
 const loader = require('../');
 
 describe('Loader', () => {
-  test('Defaults', async () => {
+  test('Defaults', () => {
     expect(loader);
   });
 });
