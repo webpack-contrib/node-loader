@@ -24,7 +24,26 @@ To begin, you'll need to install `node-loader`:
 $ npm install node-loader --save-dev
 ```
 
-No options for the loader.
+Setup the `target` option to `node`/`electron-main`/`electron-main` value and do not mock the `__dirname` global variable.
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  target: 'node',
+  node: {
+    __dirname: false,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.node$/,
+        loader: 'node-loader',
+      },
+    ],
+  },
+};
+```
 
 ### Inline
 
@@ -50,6 +69,10 @@ Then add the loader to your `webpack` config. For example:
 
 ```js
 module.exports = {
+  target: 'node',
+  node: {
+    __dirname: false,
+  },
   module: {
     rules: [
       {
@@ -89,6 +112,10 @@ import node from 'file.node';
 const os = require('os');
 
 module.exports = {
+  target: 'node',
+  node: {
+    __dirname: false,
+  },
   module: {
     rules: [
       {

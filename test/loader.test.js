@@ -1,6 +1,7 @@
 /**
  * @jest-environment node
  */
+import path from 'path';
 
 import {
   compile,
@@ -35,7 +36,10 @@ describe('loader', () => {
       getModuleSource('./node_modules/package/index.node', stats)
     ).toMatchSnapshot('module');
     expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
+      execute(
+        readAsset('main.bundle.js', compiler, stats),
+        path.resolve(__dirname, './fixtures/node_modules/package')
+      )
     ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');

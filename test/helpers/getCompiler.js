@@ -16,6 +16,9 @@ export default (fixture, loaderOptions = {}, config = {}) => {
       libraryTarget: 'commonjs',
     },
     target: 'node',
+    node: {
+      __dirname: false,
+    },
     module: {
       rules: [
         {

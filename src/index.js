@@ -2,12 +2,14 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
+import path from 'path';
+
 import { getOptions } from 'loader-utils';
 import validateOptions from 'schema-utils';
 
 import schema from './options.json';
 
-export default function loader() {
+export default function loader(content) {
   const options = getOptions(this);
 
   validateOptions(schema, options, {
@@ -15,14 +17,19 @@ export default function loader() {
     baseDataPath: 'options',
   });
 
-  const filename = this.resourcePath;
-  const flags = options.flags ? `, ${JSON.stringify(options.flags)}` : '';
+  const name = path.basename(this.resourcePath);
+
+  this.emitFile(name, content);
 
   return `
 try {
-  global.process.dlopen(module, ${JSON.stringify(filename)}${flags});
+  global.process.dlopen(module, __dirname + "/" + __webpack_public_path__ + ${JSON.stringify(
+    name
+  )}${options.flags ? `, ${JSON.stringify(options.flags)}` : ''});
 } catch (error) {
   throw new Error('node-loader:\\n' + error);
 }
 `;
 }
+
+export const raw = true;
