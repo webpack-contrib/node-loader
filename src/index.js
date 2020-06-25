@@ -22,9 +22,6 @@ export default function loader(content) {
   this.emitFile(name, content);
 
   return `
-console.log(__dirname + "/" + __webpack_public_path__ + ${JSON.stringify(
-    name
-  )});
 try {
   global.process.dlopen(module, __dirname + "/" + __webpack_public_path__ + ${JSON.stringify(
     name
