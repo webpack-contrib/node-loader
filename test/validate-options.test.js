@@ -1,8 +1,14 @@
+import os from 'os';
+
 import { getCompiler, compile } from './helpers';
 
 describe('validate options', () => {
   const tests = {
-    name: {
+    flags: {
+      success: [os.constants.dlopen.RTLD_NOW],
+      failure: [true, false, 'test'],
+    },
+    unknown: {
       success: [],
       failure: [1, true, false, 'test', /test/, [], {}, { foo: 'bar' }],
     },

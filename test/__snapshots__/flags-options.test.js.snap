@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`"flags" option should work: errors 1`] = `Array []`;
+
+exports[`"flags" option should work: module 1`] = `
+"
+try {
+  global.process.dlopen(module, \\"/home/evilebottnawi/IdeaProjects/node-loader/test/fixtures/hello_world.node\\", 2);
+} catch (error) {
+  throw new Error('node-loader:\\\\n' + error);
+}
+"
+`;
+
+exports[`"flags" option should work: result 1`] = `
+Object {
+  "default": Object {
+    "sayHi": [Function],
+  },
+}
+`;
+
+exports[`"flags" option should work: warnings 1`] = `Array []`;

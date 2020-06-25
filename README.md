@@ -54,7 +54,7 @@ module.exports = {
     rules: [
       {
         test: /\.node$/,
-        use: 'node-loader',
+        loader: 'node-loader',
       },
     ],
   },
@@ -62,6 +62,46 @@ module.exports = {
 ```
 
 And run `webpack` via your preferred method.
+
+## Options
+
+|         Name          |    Type    |   Default   | Description                                           |
+| :-------------------: | :--------: | :---------: | :---------------------------------------------------- |
+| **[`flags`](#flags)** | `{Number}` | `undefined` | Enables/Disables `url`/`image-set` functions handling |
+
+### `flags`
+
+Type: `Number`
+Default: `undefined`
+
+The `flags` argument is an integer that allows to specify dlopen behavior.
+See the [`process.dlopen`][https://nodejs.org/api/process.html#process_process_dlopen_module_filename_flags] documentation for details.
+
+**index.js**
+
+```js
+import node from 'file.node';
+```
+
+**webpack.config.js**
+
+```js
+const os = require('os');
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.node$/,
+        loader: 'node-loader',
+        options: {
+          flags: os.constants.dlopen.RTLD_NOW,
+        },
+      },
+    ],
+  },
+};
+```
 
 ## Contributing
 

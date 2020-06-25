@@ -15,11 +15,13 @@ export default function loader() {
     baseDataPath: 'options',
   });
 
-  const stringifiedResourcePath = JSON.stringify(this.resourcePath);
+  const filename = this.resourcePath;
 
   return `
 try {
-  global.process.dlopen(module, ${stringifiedResourcePath});
+  global.process.dlopen(module, ${JSON.stringify(filename)}${
+    options.flags ? `, ${JSON.stringify(options.flags)}` : ''
+  });
 } catch (error) {
   throw new Error('node-loader:\\n' + error);
 }
