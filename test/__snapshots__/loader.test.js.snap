@@ -12,11 +12,6 @@ try {
 "
 `;
 
-exports[`loader should throw an error on broken "node" addon: result 1`] = `
-"node-loader:
-Error: /absolute/path/to/test/fixtures/example/build/Release/broken.node: cannot open shared object file: No such file or directory"
-`;
-
 exports[`loader should throw an error on broken "node" addon: warnings 1`] = `Array []`;
 
 exports[`loader should work: errors 1`] = `Array []`;

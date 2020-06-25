@@ -64,7 +64,7 @@ describe('loader', () => {
         .replace(/\\/g, '/');
     }
 
-    expect(error).toMatchSnapshot('result');
+    expect(error).toBeDefined();
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
