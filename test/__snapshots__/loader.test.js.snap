@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loader should throw an error on broken "node" addon: errors 1`] = `Array []`;
+
+exports[`loader should throw an error on broken "node" addon: module 1`] = `
+"
+try {
+  global.process.dlopen(module, \\"/home/evilebottnawi/IdeaProjects/node-loader/test/fixtures/broken.node\\");
+} catch (error) {
+  throw new Error('node-loader:\\\\n' + error);
+}
+"
+`;
+
+exports[`loader should throw an error on broken "node" addon: result 1`] = `
+"node-loader:
+Error: /absolute/path/to/test/fixtures/broken.node: file too short"
+`;
+
+exports[`loader should throw an error on broken "node" addon: warnings 1`] = `Array []`;
+
+exports[`loader should work from "node_modules": errors 1`] = `Array []`;
+
+exports[`loader should work from "node_modules": module 1`] = `
+"
+try {
+  global.process.dlopen(module, \\"/home/evilebottnawi/IdeaProjects/node-loader/test/fixtures/node_modules/package/index.node\\");
+} catch (error) {
+  throw new Error('node-loader:\\\\n' + error);
+}
+"
+`;
+
+exports[`loader should work from "node_modules": result 1`] = `
+Object {
+  "default": Object {
+    "sayHi": [Function],
+  },
+}
+`;
+
+exports[`loader should work from "node_modules": warnings 1`] = `Array []`;
+
+exports[`loader should work: errors 1`] = `Array []`;
+
+exports[`loader should work: module 1`] = `
+"
+try {
+  global.process.dlopen(module, \\"/home/evilebottnawi/IdeaProjects/node-loader/test/fixtures/hello_world.node\\");
+} catch (error) {
+  throw new Error('node-loader:\\\\n' + error);
+}
+"
+`;
+
+exports[`loader should work: result 1`] = `
+Object {
+  "default": Object {
+    "sayHi": [Function],
+  },
+}
+`;
+
+exports[`loader should work: warnings 1`] = `Array []`;
