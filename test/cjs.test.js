@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import src from '../src';
 import cjs from '../src/cjs';
 

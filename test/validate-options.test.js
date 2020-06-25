@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import os from 'os';
 
 import { getCompiler, compile } from './helpers';

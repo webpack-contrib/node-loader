@@ -16,12 +16,11 @@ export default function loader() {
   });
 
   const filename = this.resourcePath;
+  const flags = options.flags ? `, ${JSON.stringify(options.flags)}` : '';
 
   return `
 try {
-  global.process.dlopen(module, ${JSON.stringify(filename)}${
-    options.flags ? `, ${JSON.stringify(options.flags)}` : ''
-  });
+  global.process.dlopen(module, ${JSON.stringify(filename)}${flags});
 } catch (error) {
   throw new Error('node-loader:\\n' + error);
 }
