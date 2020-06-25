@@ -17,7 +17,7 @@ import {
 describe('"flags" option', () => {
   it.only('should work', async () => {
     const compiler = getCompiler('simple.js', {
-      flags: os.constants.dlopen.RTLD_NOW,
+      flags: os.constants.dlopen.RTLD_LAZY,
     });
     const stats = await compile(compiler);
 

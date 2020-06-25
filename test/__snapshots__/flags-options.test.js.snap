@@ -5,7 +5,7 @@ exports[`"flags" option should work: errors 1`] = `Array []`;
 exports[`"flags" option should work: module 1`] = `
 "
 try {
-  global.process.dlopen(module, __dirname + \\"/\\" + __webpack_public_path__ + \\"hello_world.node\\", 2);
+  global.process.dlopen(module, __dirname + \\"/\\" + __webpack_public_path__ + \\"hello_world.node\\", 1);
 } catch (error) {
   throw new Error('node-loader:\\\\n' + error);
 }
