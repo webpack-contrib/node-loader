@@ -1,3 +1,5 @@
 import foo from './example/build/Release/hello.node';
 
-export default foo;
+const value = foo.hello();
+
+export default value;
