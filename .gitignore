@@ -14,4 +14,6 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 *.iml
+test/fixtures/example/build
+test/fixtures/example/node_modules
 

@@ -1,8 +1,6 @@
 /**
  * @jest-environment node
  */
-import path from 'path';
-
 import {
   compile,
   execute,
@@ -18,9 +16,9 @@ describe('loader', () => {
     const compiler = getCompiler('simple.js');
     const stats = await compile(compiler);
 
-    expect(getModuleSource('./hello_world.node', stats)).toMatchSnapshot(
-      'module'
-    );
+    expect(
+      getModuleSource('./example/build/Release/hello.node', stats)
+    ).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -28,18 +26,23 @@ describe('loader', () => {
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
 
-  it('should work from "node_modules"', async () => {
-    const compiler = getCompiler('from-node_modules.js');
+  it.skip('should work with the "publicPath" option', async () => {
+    const compiler = getCompiler(
+      'simple.js',
+      {},
+      {
+        output: {
+          publicPath: '/foo/bar',
+        },
+      }
+    );
     const stats = await compile(compiler);
 
     expect(
-      getModuleSource('./node_modules/package/index.node', stats)
+      getModuleSource('./example/build/Release/hello.node', stats)
     ).toMatchSnapshot('module');
     expect(
-      execute(
-        readAsset('main.bundle.js', compiler, stats),
-        path.resolve(__dirname, './fixtures/node_modules/package')
-      )
+      execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');

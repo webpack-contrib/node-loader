@@ -15,15 +15,15 @@ import {
 } from './helpers';
 
 describe('"flags" option', () => {
-  it.skip('should work', async () => {
+  it('should work', async () => {
     const compiler = getCompiler('simple.js', {
       flags: os.constants.dlopen.RTLD_LAZY,
     });
     const stats = await compile(compiler);
 
-    expect(getModuleSource('./hello_world.node', stats)).toMatchSnapshot(
-      'module'
-    );
+    expect(
+      getModuleSource('./example/build/Release/hello.node', stats)
+    ).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');

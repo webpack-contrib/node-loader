@@ -1,3 +1,3 @@
-import foo from './hello_world.node';
+import foo from './example/build/Release/hello.node';
 
 export default foo;

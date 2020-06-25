@@ -14,7 +14,7 @@ export default (code, dirname) => {
 
   if (!dirname) {
     // eslint-disable-next-line no-param-reassign
-    dirname = path.resolve(__dirname, '../fixtures');
+    dirname = path.resolve(__dirname, '../fixtures/example/build/Release');
   }
 
   // eslint-disable-next-line no-underscore-dangle
