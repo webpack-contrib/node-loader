@@ -16,6 +16,10 @@
 
 A [Node.js add-ons](https://nodejs.org/dist/latest/docs/api/addons.html) loader.
 
+Allows to connect native node modules with `.node` extension.
+
+> ⚠ `node-loader` only works on the `node`/`electron-main`/`electron-main` targets.
+
 ## Getting Started
 
 To begin, you'll need to install `node-loader`:
