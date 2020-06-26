@@ -2,9 +2,8 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
-import path from 'path';
 
-import { getOptions } from 'loader-utils';
+import { getOptions, interpolateName } from 'loader-utils';
 import validateOptions from 'schema-utils';
 
 import schema from './options.json';
@@ -17,7 +16,14 @@ export default function loader(content) {
     baseDataPath: 'options',
   });
 
-  const name = path.basename(this.resourcePath);
+  const name = interpolateName(
+    this,
+    typeof options.name !== 'undefined' ? options.name : '[contenthash].[ext]',
+    {
+      context: this.rootContext,
+      content,
+    }
+  );
 
   this.emitFile(name, content);
 
