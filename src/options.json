@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "flags": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false
+}
