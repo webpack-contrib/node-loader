@@ -25,7 +25,11 @@ export default function loader(content) {
 try {
   global.process.dlopen(module, __dirname + "/" + __webpack_public_path__ + ${JSON.stringify(
     name
-  )}${options.flags ? `, ${JSON.stringify(options.flags)}` : ''});
+  )}${
+    typeof options.flags !== 'undefined'
+      ? `, ${JSON.stringify(options.flags)}`
+      : ''
+  });
 } catch (error) {
   throw new Error('node-loader:\\n' + error);
 }
