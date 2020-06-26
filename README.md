@@ -92,9 +92,10 @@ And run `webpack` via your preferred method.
 
 ## Options
 
-|         Name          |    Type    |   Default   | Description                                           |
-| :-------------------: | :--------: | :---------: | :---------------------------------------------------- |
-| **[`flags`](#flags)** | `{Number}` | `undefined` | Enables/Disables `url`/`image-set` functions handling |
+|         Name          |         Type         |         Default         | Description                                                  |
+| :-------------------: | :------------------: | :---------------------: | :----------------------------------------------------------- |
+| **[`flags`](#flags)** |      `{Number}`      |       `undefined`       | Enables/Disables `url`/`image-set` functions handling        |
+|  **[`name`](#name)**  | `{String\|Function}` | `'[contenthash].[ext]'` | Specifies a custom filename template for the target file(s). |
 
 ### `flags`
 
@@ -127,6 +128,70 @@ module.exports = {
         loader: 'node-loader',
         options: {
           flags: os.constants.dlopen.RTLD_NOW,
+        },
+      },
+    ],
+  },
+};
+```
+
+### `name`
+
+Type: `String|Function`
+Default: `'[contenthash].[ext]'`
+
+Specifies a custom filename template for the target file(s).
+
+#### `String`
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  target: 'node',
+  node: {
+    __dirname: false,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.node$/,
+        loader: 'node-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      },
+    ],
+  },
+};
+```
+
+#### `Function`
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  target: 'node',
+  node: {
+    __dirname: false,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.node$/,
+        loader: 'node-loader',
+        options: {
+          name(resourcePath, resourceQuery) {
+            // `resourcePath` - `/absolute/path/to/file.js`
+            // `resourceQuery` - `?foo=bar`
+
+            if (process.env.NODE_ENV === 'development') {
+              return '[path][name].[ext]';
+            }
+
+            return '[contenthash].[ext]';
+          },
         },
       },
     ],

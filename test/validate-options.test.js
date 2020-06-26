@@ -2,12 +2,22 @@
  * @jest-environment node
  */
 
+import path from 'path';
 import os from 'os';
 
 import { getCompiler, compile } from './helpers';
 
 describe('validate options', () => {
   const tests = {
+    name: {
+      success: [
+        '[name].[ext]',
+        (resourcePath) => {
+          return path.basename(resourcePath);
+        },
+      ],
+      failure: [true, false],
+    },
     flags: {
       success: [os.constants.dlopen.RTLD_NOW],
       failure: [true, false, 'test'],

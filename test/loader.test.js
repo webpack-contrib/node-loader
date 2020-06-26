@@ -14,6 +14,7 @@ import {
 describe('loader', () => {
   it('should work', async () => {
     const compiler = getCompiler('simple.js', {
+      name: '[name].[ext]',
       flags: 1,
     });
     const stats = await compile(compiler);
@@ -29,7 +30,9 @@ describe('loader', () => {
   });
 
   it('should throw an error on broken "node" addon', async () => {
-    const compiler = getCompiler('broken.js');
+    const compiler = getCompiler('broken.js', {
+      name: '[name].[ext]',
+    });
     const stats = await compile(compiler);
 
     expect(getModuleSource('./broken.node', stats)).toMatchSnapshot('module');
