@@ -1,8 +1,6 @@
 /**
  * @jest-environment node
  */
-import os from 'os';
-
 import {
   compile,
   execute,
@@ -16,7 +14,7 @@ import {
 describe('loader', () => {
   it('should work', async () => {
     const compiler = getCompiler('simple.js', {
-      flags: os.constants.dlopen.RTLD_LAZY,
+      flags: 1,
     });
     const stats = await compile(compiler);
 
