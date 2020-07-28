@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/webpack-contrib/node-loader/compare/v1.0.0...v1.0.1) (2020-07-28)
+
+
+### Bug Fixes
+
+* compatibility with `electron` ([#27](https://github.com/webpack-contrib/node-loader/issues/27)) ([9e32a3c](https://github.com/webpack-contrib/node-loader/commit/9e32a3cc46c4d846d0c4b1c76a5b29d60ad83929))
+
 ### [1.0.0](https://github.com/webpack-contrib/node-loader/compare/v0.6.0...v1.0.0) (2020-06-26)
 
 ### ⚠ BREAKING CHANGES
