@@ -29,7 +29,7 @@ export default function loader(content) {
 
   return `
 try {
-  global.process.dlopen(module, __dirname + "/" + __webpack_public_path__ + ${JSON.stringify(
+  process.dlopen(module, __dirname + "/" + __webpack_public_path__ + ${JSON.stringify(
     name
   )}${
     typeof options.flags !== 'undefined'
