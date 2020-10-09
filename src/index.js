@@ -4,14 +4,14 @@
 */
 
 import { getOptions, interpolateName } from 'loader-utils';
-import validateOptions from 'schema-utils';
+import { validate } from 'schema-utils';
 
 import schema from './options.json';
 
 export default function loader(content) {
   const options = getOptions(this);
 
-  validateOptions(schema, options, {
+  validate(schema, options, {
     name: 'Node Loader',
     baseDataPath: 'options',
   });
