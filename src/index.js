@@ -3,18 +3,12 @@
   Author Tobias Koppers @sokra
 */
 
-import { getOptions, interpolateName } from "loader-utils";
-import { validate } from "schema-utils";
+import { interpolateName } from 'loader-utils';
 
 import schema from "./options.json";
 
 export default function loader(content) {
-  const options = getOptions(this);
-
-  validate(schema, options, {
-    name: "Node Loader",
-    baseDataPath: "options",
-  });
+  const options = this.getOptions(schema);
 
   const name = interpolateName(
     this,
