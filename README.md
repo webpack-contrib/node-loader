@@ -34,7 +34,7 @@ Setup the `target` option to `node`/`electron-main`/`electron-main` value and do
 
 ```js
 module.exports = {
-  target: 'node',
+  target: "node",
   node: {
     __dirname: false,
   },
@@ -42,7 +42,7 @@ module.exports = {
     rules: [
       {
         test: /\.node$/,
-        loader: 'node-loader',
+        loader: "node-loader",
       },
     ],
   },
@@ -54,7 +54,7 @@ module.exports = {
 **index.js**
 
 ```js
-import node from 'node-loader!./file.node';
+import node from "node-loader!./file.node";
 ```
 
 And run `webpack` via your preferred method.
@@ -64,7 +64,7 @@ And run `webpack` via your preferred method.
 **index.js**
 
 ```js
-import node from 'file.node';
+import node from "file.node";
 ```
 
 Then add the loader to your `webpack` config. For example:
@@ -73,7 +73,7 @@ Then add the loader to your `webpack` config. For example:
 
 ```js
 module.exports = {
-  target: 'node',
+  target: "node",
   node: {
     __dirname: false,
   },
@@ -81,7 +81,7 @@ module.exports = {
     rules: [
       {
         test: /\.node$/,
-        loader: 'node-loader',
+        loader: "node-loader",
       },
     ],
   },
@@ -108,16 +108,16 @@ See the [`process.dlopen`][https://nodejs.org/api/process.html#process_process_d
 **index.js**
 
 ```js
-import node from 'file.node';
+import node from "file.node";
 ```
 
 **webpack.config.js**
 
 ```js
-const os = require('os');
+const os = require("os");
 
 module.exports = {
-  target: 'node',
+  target: "node",
   node: {
     __dirname: false,
   },
@@ -125,7 +125,7 @@ module.exports = {
     rules: [
       {
         test: /\.node$/,
-        loader: 'node-loader',
+        loader: "node-loader",
         options: {
           flags: os.constants.dlopen.RTLD_NOW,
         },
@@ -148,7 +148,7 @@ Specifies a custom filename template for the target file(s).
 
 ```js
 module.exports = {
-  target: 'node',
+  target: "node",
   node: {
     __dirname: false,
   },
@@ -156,9 +156,9 @@ module.exports = {
     rules: [
       {
         test: /\.node$/,
-        loader: 'node-loader',
+        loader: "node-loader",
         options: {
-          name: '[path][name].[ext]',
+          name: "[path][name].[ext]",
         },
       },
     ],
@@ -172,7 +172,7 @@ module.exports = {
 
 ```js
 module.exports = {
-  target: 'node',
+  target: "node",
   node: {
     __dirname: false,
   },
@@ -180,17 +180,17 @@ module.exports = {
     rules: [
       {
         test: /\.node$/,
-        loader: 'node-loader',
+        loader: "node-loader",
         options: {
           name(resourcePath, resourceQuery) {
             // `resourcePath` - `/absolute/path/to/file.js`
             // `resourceQuery` - `?foo=bar`
 
-            if (process.env.NODE_ENV === 'development') {
-              return '[path][name].[ext]';
+            if (process.env.NODE_ENV === "development") {
+              return "[path][name].[ext]";
             }
 
-            return '[contenthash].[ext]';
+            return "[contenthash].[ext]";
           },
         },
       },
