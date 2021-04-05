@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/webpack-contrib/node-loader/compare/v1.0.3...v2.0.0) (2021-04-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* minimum supported webpack version is `5`
+
+* dropped webpack@4 ([#33](https://github.com/webpack-contrib/node-loader/issues/33)) ([de9d1a5](https://github.com/webpack-contrib/node-loader/commit/de9d1a5a2ec39868217d03569352811fc0df1a8f))
+
 ### [1.0.3](https://github.com/webpack-contrib/node-loader/compare/v1.0.2...v1.0.3) (2021-04-05)
 
 
