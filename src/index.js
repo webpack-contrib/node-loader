@@ -3,7 +3,7 @@
   Author Tobias Koppers @sokra
 */
 
-import { interpolateName } from 'loader-utils';
+import { interpolateName } from "loader-utils";
 
 import schema from "./options.json";
 
