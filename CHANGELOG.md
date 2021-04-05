@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/webpack-contrib/node-loader/compare/v1.0.2...v1.0.3) (2021-04-05)
+
+
+### Bug Fixes
+
+* concat directory separators instead of "/" to make it work on Windows [#39](https://github.com/webpack-contrib/node-loader/issues/39) ([#40](https://github.com/webpack-contrib/node-loader/issues/40)) ([3eb7041](https://github.com/webpack-contrib/node-loader/commit/3eb7041089b2f17b7125aba38670d63166b9a5c9))
+
 ### [1.0.2](https://github.com/webpack-contrib/node-loader/compare/v1.0.1...v1.0.2) (2020-10-09)
 
 ### Chore
