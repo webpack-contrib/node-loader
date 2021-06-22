@@ -18,7 +18,7 @@ A [Node.js add-ons](https://nodejs.org/dist/latest/docs/api/addons.html) loader.
 
 Allows to connect native node modules with `.node` extension.
 
-> ⚠ `node-loader` only works on the `node`/`electron-main`/`electron-main` targets.
+> ⚠ `node-loader` only works on the `node`/`async-node`/`electron-main`/`electron-renderer` targets.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ To begin, you'll need to install `node-loader`:
 $ npm install node-loader --save-dev
 ```
 
-Setup the `target` option to `node`/`electron-main`/`electron-main` value and do not mock the `__dirname` global variable.
+Setup the `target` option to `node`/`async-node`/`electron-main`/`electron-renderer` value and do not mock the `__dirname` global variable.
 
 **webpack.config.js**
 
