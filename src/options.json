@@ -10,10 +10,14 @@
         {
           "instanceof": "Function"
         }
-      ]
+      ],
+      "description": "Specifies a custom filename template for the target file(s).",
+      "link": "https://github.com/webpack-contrib/node-loader#name"
     },
     "flags": {
-      "type": "integer"
+      "type": "integer",
+      "description": "An integer value that allows to specify dlopen behavior.",
+      "link": "https://github.com/webpack-contrib/node-loader#flags"
     }
   },
   "additionalProperties": false

@@ -2,23 +2,31 @@
 
 exports[`validate options should throw an error on the "flags" option with "false" value 1`] = `
 "Invalid options object. Node Loader has been initialized using an options object that does not match the API schema.
- - options.flags should be a integer."
+ - options.flags should be a integer.
+   -> An integer value that allows to specify dlopen behavior.
+   -> Read more at https://github.com/webpack-contrib/node-loader#flags"
 `;
 
 exports[`validate options should throw an error on the "flags" option with "test" value 1`] = `
 "Invalid options object. Node Loader has been initialized using an options object that does not match the API schema.
- - options.flags should be a integer."
+ - options.flags should be a integer.
+   -> An integer value that allows to specify dlopen behavior.
+   -> Read more at https://github.com/webpack-contrib/node-loader#flags"
 `;
 
 exports[`validate options should throw an error on the "flags" option with "true" value 1`] = `
 "Invalid options object. Node Loader has been initialized using an options object that does not match the API schema.
- - options.flags should be a integer."
+ - options.flags should be a integer.
+   -> An integer value that allows to specify dlopen behavior.
+   -> Read more at https://github.com/webpack-contrib/node-loader#flags"
 `;
 
 exports[`validate options should throw an error on the "name" option with "false" value 1`] = `
 "Invalid options object. Node Loader has been initialized using an options object that does not match the API schema.
  - options.name should be one of these:
    string | function
+   -> Specifies a custom filename template for the target file(s).
+   -> Read more at https://github.com/webpack-contrib/node-loader#name
    Details:
     * options.name should be a string.
     * options.name should be an instance of function."
@@ -28,6 +36,8 @@ exports[`validate options should throw an error on the "name" option with "true"
 "Invalid options object. Node Loader has been initialized using an options object that does not match the API schema.
  - options.name should be one of these:
    string | function
+   -> Specifies a custom filename template for the target file(s).
+   -> Read more at https://github.com/webpack-contrib/node-loader#name
    Details:
     * options.name should be a string.
     * options.name should be an instance of function."
