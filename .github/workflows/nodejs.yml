@@ -48,7 +48,7 @@ jobs:
         run: npm run security
 
       - name: Check commit message
-        uses: wagoid/commitlint-github-action@v1
+        uses: wagoid/commitlint-github-action@v4
 
   test:
     name: Test - ${{ matrix.os }} - Node v${{ matrix.node-version }}, Webpack ${{ matrix.webpack-version }}
@@ -92,6 +92,6 @@ jobs:
         run: npm run test:coverage -- --ci
 
       - name: Submit coverage data to codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
