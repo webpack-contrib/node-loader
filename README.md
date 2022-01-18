@@ -25,7 +25,13 @@ Allows to connect native node modules with `.node` extension.
 To begin, you'll need to install `node-loader`:
 
 ```console
-$ npm install node-loader --save-dev
+npm install node-loader --save-dev
+```
+
+or
+
+```console
+yarn add -D node-loader
 ```
 
 Setup the `target` option to `node`/`async-node`/`electron-main`/`electron-renderer`/`electron-preload` value and do not mock the `__dirname` global variable.
@@ -92,16 +98,20 @@ And run `webpack` via your preferred method.
 
 ## Options
 
-|         Name          |         Type         |         Default         | Description                                                  |
-| :-------------------: | :------------------: | :---------------------: | :----------------------------------------------------------- |
-| **[`flags`](#flags)** |      `{Number}`      |       `undefined`       | Enables/Disables `url`/`image-set` functions handling        |
-|  **[`name`](#name)**  | `{String\|Function}` | `'[contenthash].[ext]'` | Specifies a custom filename template for the target file(s). |
+- **[`flags`](#flags)**
+- **[`name`](#name)**
 
 ### `flags`
 
-Type: `Number`
+Type:
+
+```ts
+type flags = number;
+```
+
 Default: `undefined`
 
+Enables/Disables `url`/`image-set` functions handling.
 The `flags` argument is an integer that allows to specify dlopen behavior.
 See the [`process.dlopen`](https://nodejs.org/api/process.html#process_process_dlopen_module_filename_flags) documentation for details.
 
@@ -137,12 +147,17 @@ module.exports = {
 
 ### `name`
 
-Type: `String|Function`
+Type:
+
+```ts
+type name = string | ((resourcePath: string, resourceQuery: string) => string);
+```
+
 Default: `'[contenthash].[ext]'`
 
 Specifies a custom filename template for the target file(s).
 
-#### `String`
+#### `string`
 
 **webpack.config.js**
 
@@ -166,7 +181,7 @@ module.exports = {
 };
 ```
 
-#### `Function`
+#### `function`
 
 **webpack.config.js**
 
