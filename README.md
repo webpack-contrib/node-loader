@@ -24,8 +24,21 @@ Allows to connect native node modules with `.node` extension.
 To begin, you'll need to install `node-loader`:
 
 ```console
-$ npm install node-loader --save-dev
+npm install node-loader --save-dev
 ```
+
+or
+
+```console
+yarn add -D node-loader
+```
+
+or
+
+```console
+pnpm add -D node-loader
+```
+
 
 Setup the `target` option to `node`/`async-node`/`electron-main`/`electron-renderer`/`electron-preload` value and do not mock the `__dirname` global variable.
 
