@@ -39,7 +39,6 @@ or
 pnpm add -D node-loader
 ```
 
-
 Setup the `target` option to `node`/`async-node`/`electron-main`/`electron-renderer`/`electron-preload` value and do not mock the `__dirname` global variable.
 
 **webpack.config.js**
