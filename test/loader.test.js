@@ -1,15 +1,15 @@
 /**
  * @jest-environment node
  */
-import {
+ const {
   compile,
   execute,
   getCompiler,
   getErrors,
   getModuleSource,
   getWarnings,
-  readAsset,
-} from "./helpers";
+  readAsset
+} = require("./helpers");
 
 describe("loader", () => {
   it("should work", async () => {

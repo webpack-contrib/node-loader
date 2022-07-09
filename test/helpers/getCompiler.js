@@ -1,9 +1,9 @@
-import path from "path";
+const path = require("path");
+const webpack = require("webpack");
 
-import webpack from "webpack";
-import { createFsFromVolume, Volume } from "memfs";
+const { createFsFromVolume, Volume } = require("memfs");
 
-export default (fixture, loaderOptions = {}, config = {}) => {
+module.exports = (fixture, loaderOptions = {}, config = {}) => {
   const fullConfig = {
     mode: "development",
     devtool: config.devtool || false,

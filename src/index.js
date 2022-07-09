@@ -3,11 +3,11 @@
   Author Tobias Koppers @sokra
 */
 
-import { interpolateName } from "loader-utils";
+const{ interpolateName } = require("loader-utils");
 
-import schema from "./options.json";
+const schema = require("./options.json");
 
-export default function loader(content) {
+module.exports = function loader(content) {
   const options = this.getOptions(schema);
 
   const name = interpolateName(
@@ -36,4 +36,6 @@ try {
 `;
 }
 
-export const raw = true;
+const raw = true
+
+module.exports.raw = raw;
