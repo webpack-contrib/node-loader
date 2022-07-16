@@ -2,10 +2,10 @@
  * @jest-environment node
  */
 
- const path = require("path");
- const os = require("os");
- 
- const { getCompiler, compile } = require("./helpers");
+const path = require("path");
+const os = require("os");
+
+const { getCompiler, compile } = require("./helpers");
 
 describe("validate options", () => {
   const tests = {

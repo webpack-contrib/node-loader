@@ -1,14 +1,14 @@
 /**
  * @jest-environment node
  */
- const {
+const {
   compile,
   execute,
   getCompiler,
   getErrors,
   getModuleSource,
   getWarnings,
-  readAsset
+  readAsset,
 } = require("./helpers");
 
 describe("loader", () => {

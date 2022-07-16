@@ -3,7 +3,7 @@
   Author Tobias Koppers @sokra
 */
 
-const{ interpolateName } = require("loader-utils");
+const { interpolateName } = require("loader-utils");
 
 const schema = require("./options.json");
 
@@ -34,8 +34,8 @@ try {
   throw new Error('node-loader:\\n' + error);
 }
 `;
-}
+};
 
-const raw = true
+const raw = true;
 
 module.exports.raw = raw;
