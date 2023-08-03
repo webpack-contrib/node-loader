@@ -86,7 +86,7 @@ jobs:
           cache: "npm"
 
       - name: Use latest NPM on ubuntu/macos
-        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
+        if: (matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest') && matrix.node-version != '10.x'
         run: sudo npm i -g npm
 
       - name: Use latest NPM on windows
