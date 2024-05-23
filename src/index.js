@@ -23,9 +23,9 @@ export default function loader(content) {
 
   return `
 try {
-  process.dlopen(module, __dirname + require("path").sep + __webpack_public_path__ + ${JSON.stringify(
+  process.dlopen(module, require("path").join(__dirname, __webpack_public_path__, ${JSON.stringify(
     name
-  )}${
+  )})${
     typeof options.flags !== "undefined"
       ? `, ${JSON.stringify(options.flags)}`
       : ""
