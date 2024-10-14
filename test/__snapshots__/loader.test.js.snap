@@ -5,7 +5,7 @@ exports[`loader should throw an error on broken "node" addon: errors 1`] = `Arra
 exports[`loader should throw an error on broken "node" addon: module 1`] = `
 "
 try {
-  process.dlopen(module, __dirname + require(\\"path\\").sep + __webpack_public_path__ + \\"broken.node\\");
+  process.dlopen(module, require(\\"path\\").join(__dirname, __webpack_public_path__, \\"broken.node\\"));
 } catch (error) {
   throw new Error('node-loader:\\\\n' + error);
 }
@@ -19,7 +19,7 @@ exports[`loader should work: errors 1`] = `Array []`;
 exports[`loader should work: module 1`] = `
 "
 try {
-  process.dlopen(module, __dirname + require(\\"path\\").sep + __webpack_public_path__ + \\"hello.node\\", 1);
+  process.dlopen(module, require(\\"path\\").join(__dirname, __webpack_public_path__, \\"hello.node\\"), 1);
 } catch (error) {
   throw new Error('node-loader:\\\\n' + error);
 }
