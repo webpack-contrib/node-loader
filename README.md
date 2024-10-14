@@ -45,6 +45,9 @@ Setup the `target` option to `node`/`async-node`/`electron-main`/`electron-rende
 
 ```js
 module.exports = {
+  resolve: {
+    extensions: ["...", ".node"],
+  },
   target: "node",
   node: {
     __dirname: false,
