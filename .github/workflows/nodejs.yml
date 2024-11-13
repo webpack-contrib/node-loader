@@ -42,9 +42,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: Use latest NPM
-        run: sudo npm i -g npm
-
       - name: Install dependencies
         run: npm ci
 
@@ -66,6 +63,15 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: [10.x, 12.x, 14.x, 16.x, 18.x, 20.x, 22.x]
         webpack-version: [latest]
+        exclude:
+          - os: windows-latest
+            node-version: 10.x
+          - os: macos-latest
+            node-version: 10.x
+          - os: macos-latest
+            node-version: 12.x
+          - os: macos-latest
+            node-version: 14.x
 
     runs-on: ${{ matrix.os }}
 
@@ -86,13 +92,21 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
-      - name: Use latest NPM on ubuntu/macos
-        if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
-        run: sudo npm i -g npm
+      - name: Update node-gyp on windows
+        if: matrix.os == 'windows-latest' && (matrix.node-version == '12.x' || matrix.node-version == '14.x')
+        run: Get-Command node | Select-Object -ExpandProperty Source | Join-Path -ChildPath "..\node_modules\npm\node_modules\npm-lifecycle" -Resolve | Push-Location; npm install node-gyp@8.x; Pop-Location
 
-      - name: Use latest NPM on windows
+      - name: Install Python setuptools on ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: python3 -m pip install setuptools
+
+      - name: Install Python setuptools on macos
+        if: matrix.os == 'macos-latest'
+        run: brew install python-setuptools
+
+      - name: Install Python setuptools on windows
         if: matrix.os == 'windows-latest'
-        run: npm i -g npm
+        run: python -m pip install setuptools
 
       - name: Install dependencies
         run: npm ci
