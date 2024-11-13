@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/webpack-contrib/node-loader/compare/v2.0.0...v2.1.0) (2024-11-13)
+
+
+### Features
+
+* display helpful description and links on error ([#54](https://github.com/webpack-contrib/node-loader/issues/54)) ([31c0009](https://github.com/webpack-contrib/node-loader/commit/31c00094de7b443e639ffdb15bb33b56365930d2))
+
+
+### Bug Fixes
+
+* dlopen relative part problem in mac system ([0507d0b](https://github.com/webpack-contrib/node-loader/commit/0507d0b5b139d1558d9917cb29bfce12d4c1ac26))
+
 ## [2.0.0](https://github.com/webpack-contrib/node-loader/compare/v1.0.3...v2.0.0) (2021-04-05)
 
 
